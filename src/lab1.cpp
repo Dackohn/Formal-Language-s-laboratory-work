@@ -3,14 +3,14 @@
 #include <map>
 #include <set>
 #include <random>
-
+//V23
 class Grammar {
 private:
-    std::set<char> VN = {'S', 'B', 'C'};  // Non-terminals
-    std::set<char> VT = {'a', 'b', 'c'};  // Terminals
+    std::set<char> VN = {'S', 'B', 'C'};
+    std::set<char> VT = {'a', 'b', 'c'}; 
     std::map<char, std::vector<std::string>> P;
     char startSymbol = 'S';
-    std::vector<std::string> generatedStrings;  // Store generated strings
+    std::vector<std::string> generatedStrings;
 
 public:
     // Initialize the grammar rules
@@ -63,19 +63,19 @@ private:
     std::set<char> alphabet = {'a', 'b', 'c'};  // Alphabet
     std::map<std::pair<char, char>, char> transitions;
     char startState = 'S';
-    std::set<char> finalStates = {'C'};  // C is a final state
+    std::set<char> finalStates = {'C'};  
 
 public:
     // Constructor initializes the transitions based on the grammar rules
     FiniteAutomaton() {
-        transitions[{'S', 'a'}] = 'B';  // S → aB
-        transitions[{'B', 'a'}] = 'C';  // B → aC
-        transitions[{'B', 'b'}] = 'B';  // B → bB
-        transitions[{'C', 'b'}] = 'B';  // C → bB
-        transitions[{'C', 'c'}] = 'C';  // C → c (Final state)
-        transitions[{'C', 'a'}] = 'S';  // C → aS
+        transitions[{'S', 'a'}] = 'B';
+        transitions[{'B', 'a'}] = 'C';
+        transitions[{'B', 'b'}] = 'B'; 
+        transitions[{'C', 'b'}] = 'B'; 
+        transitions[{'C', 'c'}] = 'C';
+        transitions[{'C', 'a'}] = 'S';  
     }
-
+       
     bool validateString(const std::string& input) {
         char currentState = startState;
 
@@ -89,6 +89,7 @@ public:
         return finalStates.find(currentState) != finalStates.end();
     }
 };
+
 
 int main() {
     Grammar grammar;
