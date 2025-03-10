@@ -1,0 +1,12 @@
+digraph DFA {
+  rankdir=LR;
+  node [shape=circle];
+  "q2q0" [shape=doublecircle];
+  "" -> "q0" [label="start"];
+  "q2q0" -> "q0q1" [label="a"];
+  "q2q0" -> "q2q0" [label="b"];
+  "q0q1" -> "q0q1" [label="a"];
+  "q0q1" -> "q2q0" [label="b"];
+  "q0" -> "q0q1" [label="a"];
+  "q0" -> "q0" [label="b"];
+}
