@@ -30,7 +30,6 @@ int main() {
         std::cout << str << " -> " << (dfa.StringBelongsToLanguage(str) ? "Valid" : "Invalid") << "\n";
     }
 
-    std::cout << "\nDOT Representation:\n";
     dfa.ToDot();
     ndfa.ToDot("ndfa.dot");
     return 0;
