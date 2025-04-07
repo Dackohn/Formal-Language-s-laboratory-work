@@ -8,7 +8,7 @@ int main() {
         {R"(LOAD sales FROM "data.csv"
             SET WINDOW = 7d)", "ast1.dot"},
 
-        {R"(TREND(sales.amount) -> forecast_next(14d))", "ast2.dot"},
+        {R"(TREND(sales.amount) -> forecast_next(14d)```)", "ast2.dot"},
 
         {R"(FORECAST sales.amount USING ARIMA(model_order=2))", "ast3.dot"},
 

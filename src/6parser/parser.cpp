@@ -88,7 +88,8 @@ ASTNodePtr Parser::parseStatement() {
     if (match(TokenType::REMOVE) || match(TokenType::REPLACE) || match(TokenType::ANALYZE))
         return parseCleanStatement();
 
-    throw std::runtime_error("Unexpected token at line " + std::to_string(peek().line));
+    throw std::runtime_error("Unexpected token at line " + std::to_string(peek().line) + ", column " +
+                             std::to_string(peek().column) + ": " + peek().value);
 }
 
 ASTNodePtr Parser::parseLoadStatement() {
