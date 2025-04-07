@@ -58,6 +58,9 @@ int main() {
         std::cout << "Processing snippet " << i + 1 << ":\n" << code << "\n\n";
         Lexer lexer(code);
         auto tokens = lexer.tokenize();
+        for (const auto& token : tokens) {
+            std::cerr << "Token: "<< token.value << " Id: " << std::to_string(int(token.type)) << " line " << token.line << " collumn " <<  token.column << "\n";
+        }
         Parser parser(tokens);
         auto ast = parser.parse();
         std::string result;
