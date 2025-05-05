@@ -1,4 +1,4 @@
-# Topic: Chomsky Normal Form
+# Topic: Parser and Abstract Syntax Tree construction
 ## **Student : Pleșca Denis**
 ## **Teacher : Crețu Dumitru**
 
